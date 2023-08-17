@@ -1,0 +1,9 @@
+var purchase1 = {
+    shoes : 100,
+    tax : 1.2,
+    total : function(){
+        var calcul = this.shoes * this.tax;
+        console.log('Total : ', calcul);
+    }
+}
+purchase1.total();
