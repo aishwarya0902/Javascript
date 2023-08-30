@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURRENT BILL GENERATOR </title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #B9B4C7;
+  }
+  
+  .form {
+    margin: 10% auto;
+    width: 80%;
+    max-width: 600px;
+    padding: 1.5rem;
+    border: 5px solid #352F44;
+    background-color: #5C5470;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #B9B4C7;
+    margin-bottom: 1.5rem;
+  }
+  
+  .text {
+    width: 100%;
+    /* height: 500px;
+    background-color: #f0f0f0; */
+    padding: 0.5rem;
+    border: 2px solid #352F44;
+    border-radius: 5px;
+  }
+  
+  .btn {
+    display: block;
+    margin: 1rem auto;
+    padding: 0.5rem;
+    width: 150px;
+    border: none;
+    background-color: rgb(4, 183, 153);
+    color:#FAF0E6;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .btn:hover {
+    background-color: rgb(0, 139, 116);
+  }
+  
+</head>
+<body>
+    <div class="form">
+        <h2 class="h1">Current Bill</h2>
+        
+        <input type="text" id="cm" class="text" placeholder="Enter the units">
+        <button class="btn" onclick="convert()">Generate</button>
+        <h2 class=" res"id ="res"></h2>
+    </div>
+    <script>
+        function convert(){
+            let a = document.getElementById('cm').value;
+            let c = document.getElementById('res');
+            let bill;
+            if(a <= 50){
+                bill = a * 0.75;
+            }else if(a <= 150){
+                bill = 50 * 0.75 + (a-50)*1.00;
+            }else if(a <= 250 ){
+                bill = 50 * 0.75 + 100 * 1.00 + (a - 150)*1.30;
+            }else{
+                bill = 50 * 0.75 + 100 * 1.00 + 100 * 1.30 +(a - 250)*1.50;
+            }
+            c.innerHTML = `Total Bill: Rs.${bill.toFixed(2)}`
+        }
+      
+
+
+    </script>
+</body>
+</html>
