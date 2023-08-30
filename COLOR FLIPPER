@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Flipper</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .nav{
+            height: 100px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: aliceblue;
+           
+        }
+        .h2{
+            margin: 40px;
+            font-size: 1.5rem;
+            color: rgb(59, 97, 97);
+        }
+        span{
+            margin: 40px;
+            font-size: 1.5rem;
+            color: rgb(59, 97, 97);
+        }
+        .container{
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        button{
+            padding: 10px 20px;
+            border-radius: 6px;
+            border: none;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            color: white;
+            background-color: #020101;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <h2 class="h2">Color Flipper</h2>
+        <span id="color">#FFFFFF</span>
+    </div>
+    <div class="container">
+        <button id="btn">CLICK ME</button>
+    </div>
+    <script>
+        let btn = document.getElementById("btn")
+        let text = document.getElementById("color")
+        let contain = document.getElementsByClassName("container")
+        let arr = [0,1, 2 ,3,4,5,6,7,8,9,'A','B','C','D','E','F']
+        btn.addEventListener("click",ColorFlip);
+        function ColorFlip(){
+            let hex = '#';
+            for(let i = 0; i<6 ;i++){
+                hex += arr[Math.floor(Math.random()*arr.length)];
+            }
+            document.body.style.backgroundColor = hex;
+            text.innerHTML = hex;
+        }
+
+    </script>
+</body>
+</html>
