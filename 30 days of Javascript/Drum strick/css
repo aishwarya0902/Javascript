@@ -1,0 +1,32 @@
+html{
+    background-image: url(/background.jpg);
+    background-size: cover;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.keys{
+    /* background-color: bisque; */
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}
+.key{
+    border: .3rem solid black;
+    border-radius: .5rem;
+    font-size: 1.5rem;
+    margin: 1rem;
+    padding: 1rem .5rem;
+    text-align: center;
+    color: white;
+    transition: all .05s ease;
+    width: 10rem;
+    background-color: rgba(0, 0, 0, 0.701);
+}
+kbd{
+    display: block;
+    font-size: 2rem;
+}
